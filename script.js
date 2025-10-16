@@ -1,19 +1,80 @@
-const num = 266219;
-const split = num.toString().split('');
-console.log(split);
+// let lang = prompt('Введите язык');
 
-let result = 1;
-for(let i = 0; i < split.length; i++) { 
-    result *= split[i]
+// if(lang == 'ru'){
+//     console.log(
+//     "Понедельник",
+//     "Вторник",
+//     "Среда",
+//     "Четверг",
+    "Пятница",
+    "Суббота",
+    'Воскресенье');
 }
-    console.log(result);
 
-const increased = (result**3);
-console.log(increased);
+else if(lang == 'en'){
+    console.log(
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday")
+}
+ 
+switch(lang){
+    case "ru": console.log(
+        "Понедельник",
+        "Вторник",
+        "Среда",
+        "Четверг",
+        "Пятница",
+        "Суббота",
+        "Воскресенье");
+        break;
 
-const fin = increased.toString().slice(0,2);
-console.log(fin);
+    case "en": console.log(
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday");
+        break;
+}
 
 
+const lang = prompt("Введите язык");
 
+const days = { 
+    'ru': 
+    ["Понедельник",
+    "Вторник",
+    "Среда",
+    "Четверг",
+    "Пятница",
+    "Суббота",
+    "Воскресенье";]
 
+    'en':
+        ["Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday";
+        ]
+}
+
+const weekDays = days[lang] || []
+
+(weekDays.forEach(day => console.log(day)))
+
+const namePerson = prompt("Write your name");
+const status = namePerson === "Артем" ? "директор" : 
+namePerson === "Александр" ? "преподаватель" : 
+"студент";
+
+console.log(status);
