@@ -1,80 +1,19 @@
-// let lang = prompt('Введите язык');
-
-// if(lang == 'ru'){
-//     console.log(
-//     "Понедельник",
-//     "Вторник",
-//     "Среда",
-//     "Четверг",
-    "Пятница",
-    "Суббота",
-    'Воскресенье');
-}
-
-else if(lang == 'en'){
-    console.log(
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday")
-}
- 
-switch(lang){
-    case "ru": console.log(
-        "Понедельник",
-        "Вторник",
-        "Среда",
-        "Четверг",
-        "Пятница",
-        "Суббота",
-        "Воскресенье");
-        break;
-
-    case "en": console.log(
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday");
-        break;
-}
+const userInput = prompt("Введите значение.");
 
 
-const lang = prompt("Введите язык");
+const greeting = function(value){
+    if (typeof value !== "string"){
+        console.log("Это не строка!");
+        return;
+    }
+    const trimmedValue = value.trim();
+    
+    if (trimmedValue.length > 30){
+        return trimmedValue.slice(0, 30) + "...";
+    }
+    return trimmedValue;
+};
 
-const days = { 
-    'ru': 
-    ["Понедельник",
-    "Вторник",
-    "Среда",
-    "Четверг",
-    "Пятница",
-    "Суббота",
-    "Воскресенье";]
+const result = greeting(userInput);
 
-    'en':
-        ["Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday";
-        ]
-}
-
-const weekDays = days[lang] || []
-
-(weekDays.forEach(day => console.log(day)))
-
-const namePerson = prompt("Write your name");
-const status = namePerson === "Артем" ? "директор" : 
-namePerson === "Александр" ? "преподаватель" : 
-"студент";
-
-console.log(status);
+console.log(`Результат: "${result}"`);
